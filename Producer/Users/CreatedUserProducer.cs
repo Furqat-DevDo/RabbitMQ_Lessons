@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Text.Json;
 using Contracts;
+using Contracts.Users;
 using RabbitMQ.Client;
 
 namespace Producer;
