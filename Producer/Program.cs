@@ -17,11 +17,14 @@ using Producer.Pdf;
 //    if (id == 100) break;
 // }
 
-var producer = new PdfGeneratorProducer();
+var producer = PdfGeneratorProducer.CreateInstance();
+int step = 1;
 
-while (true)
+while (step <= 100)
 {
     var html = File.ReadAllText(@"C:\Users\furqa\Pub-Sub\Contracts\Invoice.html");
-    await producer.GeneratePdfRequest(html);
+    await producer.SendPdfRequestToQueue(html);
+    step++;
 }
 
+producer.Dispose();

@@ -2,7 +2,7 @@
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace Consumer;
+namespace Consumer.Users;
 
 public class UserCreatedConsumer
 {
