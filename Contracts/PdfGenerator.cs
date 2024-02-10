@@ -16,12 +16,12 @@ public class PdfGenerator(ILogger<PdfGenerator> logger) : IDisposable
         }
     }
 
-    public async ValueTask<IBrowser> Init()
+    private async ValueTask<IBrowser> Init()
     {
         return _browser ??= await Puppeteer.LaunchAsync(new LaunchOptions
         {
             Headless = true,
-            Args = ["--no-sandbox", "--disable-dev-shm-usage"],
+            Args = new[]{"--no-sandbox", "--disable-dev-shm-usage"},
             ExecutablePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe"
         });
     }
